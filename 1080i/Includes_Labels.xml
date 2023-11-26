@@ -118,6 +118,46 @@
         <value>$LOCALIZE[19055]</value>
     </variable>
 
+    <variable name="709_Row_1">
+        <value condition="Container.Content(tvshows)">$INFO[ListItem.Property(TotalSeasons)] $LOCALIZE[20373]  •  $INFO[ListItem.Property(WatchedEpisodes)]/$INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20359]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.Property(WatchedEpisodes)]/$INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20359]</value>
+        <value condition="ListItem.IsCollection">$INFO[Container(44023).NumItems]$INFO[Window(Home).Property(TMDbHelper.ListItem.Set.NumItems),/,] $LOCALIZE[31030]</value>
+        <value condition="[Container.Content(movies) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Director)">$LOCALIZE[20339]: $INFO[ListItem.Director]</value>
+        <value></value>
+    </variable>
+
+    <variable name="709_Row_2">
+        <value condition="ListItem.IsCollection">$INFO[Window(Home).Property(TMDbHelper.ListItem.Set.Years),$LOCALIZE[652]: ,]</value>
+        <value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Premiered) + !String.IsEmpty(ListItem.OriginalTitle)">$INFO[ListItem.Premiered]  •  $INFO[ListItem.OriginalTitle]</value>
+        <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
+        <value></value>
+    </variable>
+
+    <variable name="709_Row_3">
+        <value condition="ListItem.IsCollection + !String.IsEmpty(Window(home).Property(SkinInfo.Set.Movies.Genre))">$LOCALIZE[515]: $INFO[Window(home).Property(SkinInfo.Set.Movies.Genre)]</value>
+        <value condition="ListItem.IsCollection"></value>
+        <value condition="Container.Content(movies) | Container.Content(tvshows)">$LOCALIZE[515]: $INFO[ListItem.Genre]</value>
+        <value></value>
+    </variable>
+
+    <variable name="709_Row_4">
+        <value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Status)">$INFO[ListItem.Studio]  •  $INFO[ListItem.Status]</value>
+        <value condition="Container.Content(tvshows)">$INFO[ListItem.Studio]</value>
+        <value condition="ListItem.IsCollection"></value>
+        <value condition="Container.Content(movies) | Container.Content(episodes)">$LOCALIZE[31013] $INFO[ListItem.EndTime]</value>
+        <value></value>
+    </variable>
+
+    <variable name="709_Sub_Row">
+        <value condition="ListItem.IsCollection + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Set.Years),,  •  ]$INFO[Container(44023).NumItems]$INFO[Window(Home).Property(TMDbHelper.ListItem.Set.NumItems),/,] $LOCALIZE[31030]$VAR[RatingLabel,  •  ,]</value>
+        <value condition="ListItem.IsCollection">$INFO[Container(44023).NumItems]$INFO[Window(Home).Property(TMDbHelper.ListItem.Set.NumItems),/,] $LOCALIZE[31030]$VAR[RatingLabel,  •  ,]</value>
+        <value condition="Container.Content(tvshows)">$INFO[ListItem.Year,,  •  ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]] $INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]] $INFO[ListItem.Rating,  •  ,]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.Year,,  •  ]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]] $INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</value>
+        <value condition="Container.Content(episodes)">S$INFO[ListItem.Season]E$INFO[ListItem.Episode]$VAR[LabelDurationTimeCheck,  •  ,]$VAR[RatingLabel,  •  ,]</value>
+        <value condition="Container.Content(movies) | Container.Content(sets)">$INFO[ListItem.Year]$VAR[LabelDurationTimeCheck,  •  ,]$VAR[RatingLabel,  •  ,]</value>
+        <value>$LOCALIZE[19055]</value>
+    </variable>
+
     <variable name="LabelPercentWatched9500">
         <value condition="Skin.HasSetting(hide.markers)"></value>
         <value condition="Container(9500).ListItem.IsResumable">&#62596;</value>
