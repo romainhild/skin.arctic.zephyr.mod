@@ -2,7 +2,7 @@
 
 <includes>
 
-    <include name="MyList">
+    <include name="View_709_Fanart_Information">
         <constant name="verticalPad">170</constant>
         <constant name="horizontalPad">80</constant>
         <constant name="fanartPad">10</constant>
@@ -11,62 +11,18 @@
         <constant name="posterW">320</constant>
         <constant name="fanartH">675</constant>
         <constant name="fanartW">1200</constant>
-        <constant name="listH">240</constant> <!-- 1080-2*verticalPad-posterH -->
-        <constant name="listW">610</constant> <!-- 1920-horizontalPad-fanartPad-fanartW-itemGap -->
-        <constant name="bottomGroupH">205</constant> <!-- 1080-fanartPad-verticalPad-fanartH-itemGap -->
-        <constant name="bottomGroupW">1420</constant> <!-- 1920-2*horizontalPad-posterW-itemGap -->
-        <constant name="bottomSubGroupW">700</constant> <!-- (bottomGroupW-itemGap)/2 -->
+        <constant name="listH">240</constant>        <!-- 1080-2*verticalPad-posterH -->
+        <constant name="listW">610</constant>        <!-- 1920-horizontalPad-fanartPad-fanartW-itemGap -->
+        <constant name="bottomGroupH">205</constant>        <!-- 1080-fanartPad-verticalPad-fanartH-itemGap -->
+        <constant name="bottomGroupW">1420</constant>        <!-- 1920-2*horizontalPad-posterW-itemGap -->
+        <constant name="bottomSubGroupW">700</constant>        <!-- (bottomGroupW-itemGap)/2 -->
         <control type="group">
             <include>Animation.Common</include>
             <visible>Control.IsVisible(709)</visible>
             <include>ViewSlideForJumpBar</include>
 
-            <!-- <control type="group"> -->
-                <!-- <control type="panel" id="709">
-                    <oninfo condition="Container.Content(actors)">RunScript(script.embuary.info,call=person,query='"$INFO[ListItem.Label]"')</oninfo>
-                    <visible>Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) | Container.Content(sets) | Container.Content(seasons)</visible>
-                    <top>PosterPad</top>
-                    <height>458</height>
-                    <left>ListX</left>
-                    <right>SidePad</right>
-                    <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-                    <onright>1608</onright>
-                    <onup>709</onup>
-                    <ondown>709</ondown>
-                    <pagecontrol>1608</pagecontrol>
-                    <include content="forced_view" condition="Skin.HasSetting(enable.forcedviews)">
-                        <param name="string" value="Mylist" />
-                    </include>
-                    <viewtype label="MyList">list</viewtype>
-                    <include>ScrolltimeViewsList</include>
-                    <itemlayout width="620" height="50">
-                        <include>itemlayout_709</include>
-                    </itemlayout>
-                    <focuslayout width="620" height="80">
-                        <include>focuslayout_709</include>
-                    </focusedlayout>
-                </control> -->
 
-                <!-- Scrollbar Start -->
-                <!-- <control type="scrollbar" id="1608">
-                    <include content="scrollbar_vertical">
-                        <param name="scrollid" value="1608"/>
-                    </include>
-                </control> -->
-                <!-- Scrollbar End -->
-            <!-- </control> -->
-
-        <constant name="horizontalPad">80</constant>
-            <!-- <control type="image">
-                <left>80</left>
-                <top>450</top>
-                <width>320</width>
-                <height>480</height>
-                <fadetime>750</fadetime>
-                <texture>$INFO[Container(709).ListItem.Art(poster)]</texture>
-                <aspectratio>keep</aspectratio>
-                <visible>Control.IsVisible(709)</visible>
-            </control> -->
+            <constant name="horizontalPad">80</constant>
 
             <control type="image">
                 <top>10</top>
@@ -96,10 +52,10 @@
                     <autoscroll delay="8000" time="1250" repeat="7500">true</autoscroll>
                     <label>$INFO[Container(709).ListItem.Plot]</label>
                 </control>
-    
-               <control type="group">
-                    <left>570</left>
-                    <width>560</width>
+
+                <control type="group">
+                    <left>580</left>
+                    <width>550</width>
                     <!-- <left>720</left>
                     <width>700</width> -->
                     <visible>!String.IsEqual(ListItem.Label,..)</visible>
@@ -130,32 +86,18 @@
                         <scroll>true</scroll>
                         <label>$VAR[709_Row_4]</label>
                     </control>
-                        <!-- <label>$LOCALIZE[31476]</label> -->
-                        <!-- <label>$VAR[WatchedLabelList]</label> -->
-                        <!-- <label>$INFO[Container(709).ListItem.OriginalTitle]</label> -->
-                        <!-- <label>$INFO[Container(709).ListItem.IsCollection]</label> -->
-                        <!-- <label>$INFO[Container(709).ListItem.Premiered]</label> -->
-                        <!-- <label>$INFO[Container(709).ListItem.Country]</label> -->
-                        <!-- <label>$INFO[Container(709).ListItem.EndTime]</label> -->
-                        <!-- <label>TOTOEOZT</label> -->
-                </control>
-            </control>
-<!-- bar du bas: 170 -->
-<!-- bar du haut: 170 -->
-            <!-- <control type="image">
-                <top>0</top>
-                <left>0</left>
-                <height>170</height>
-                <width>1900</width>
-                <texture>common/box.png</texture>
-            </control>
-            <control type="image">
-                <top>0</top>
-                <right>0</right>
-                <height>910</height>
-                <width>600</width>
-                <texture>common/box.png</texture>
-            </control> -->
+                    <!-- <label>$LOCALIZE[31476]</label> -->
+                    <!-- <label>$VAR[WatchedLabelList]</label> -->
+                    <!-- <label>$INFO[Container(709).ListItem.OriginalTitle]</label> -->
+                    <!-- <label>$INFO[Container(709).ListItem.IsCollection]</label> -->
+                    <!-- <label>$INFO[Container(709).ListItem.Premiered]</label> -->
+                    <!-- <label>$INFO[Container(709).ListItem.Country]</label> -->
+                    <!-- <label>$INFO[Container(709).ListItem.EndTime]</label> -->
+                    <!-- <label>TOTOEOZT</label> -->
+                </control> <!-- Detail block -->
+            </control> <!-- Information block -->
+            <!-- bar du bas: 170 -->
+            <!-- bar du haut: 170 -->
 
             <control type="scrollbar" id="1709">
                 <include content="scrollbar_vertical">
@@ -164,7 +106,7 @@
             </control>
 
             <control type="list" id="709">
-                <viewtype label="MyList">list</viewtype>
+                <viewtype label="Fanart Information">list</viewtype>
                 <left>80</left>
                 <top>170</top>
                 <width>610</width>
@@ -172,7 +114,8 @@
                 <height>740</height>
                 <orientation>vertical</orientation>
                 <focusposition>1</focusposition>
-                <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+                <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+                <!-- <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible> -->
 
                 <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
                 <onright>1709</onright>
@@ -184,9 +127,6 @@
                 <!-- Scrollbar End -->
 
                 <itemlayout width="610" height="50">
-        <!-- </control>
-    </include>
-                <include name="itemlayout_709"> -->
                     <control type="group">
                         <control type="label">
                             <left>10</left>
@@ -212,12 +152,10 @@
                             <label>$VAR[WatchedLabelList]</label>
                             <visible>!String.IsEqual(ListItem.Label,..)</visible>
                         </control>
-                    </control>                        
+                    </control>
                 </itemlayout>
-                
+
                 <focusedlayout width="610" height="80">
-                <!-- </include>
-                </include name="focuslayout_709"> -->
                     <control type="image">
                         <width>100%</width>
                         <height>100%</height>
@@ -230,7 +168,7 @@
                         <texture border="8" colordiffuse="$VAR[ColorHighlight2]">common/gradient-box-wide.png</texture>
                         <include>ListViewScrollAnim</include>
                     </control>
-                    
+
                     <control type="group">
                         <width>550</width>
                         <height>80</height>
@@ -244,7 +182,7 @@
                             <textcolor>Light1</textcolor>
                             <selectedcolor>Light1</selectedcolor>
                         </control>
-    
+
                         <control type="label">
                             <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             <height>25</height>
@@ -271,7 +209,7 @@
                         <visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
                 </focusedlayout>
-            </control>
-        </control>
+            </control> <!-- List block -->
+        </control> <!-- All block -->
     </include>
 </includes>

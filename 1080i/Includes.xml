@@ -49,7 +49,9 @@
     <include file="View_522_Minimal_V2_Episodes.xml"/>
     <include file="View_524_Minimal_V2_Seasons.xml"/>
     <include file="View_527_List_V2.xml"/>
-    <include file="View_MyList.xml"/>
+    <include file="View_709_Fanart_Information.xml"/>
+    <include file="View_710_Fanart_Information_Season.xml"/>
+    <include file="View_711_Fanart_Information_Episode.xml"/>
     <include file="Includes_Furniture.xml"/>
     <include file="Includes_Home.xml"/>
     <include file="Includes_Labels.xml"/>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="View_711_Fanart_Information_Episode">
+        <constant name="verticalPad">170</constant>
+        <constant name="horizontalPad">80</constant>
+        <constant name="fanartPad">10</constant>
+        <constant name="itemGap">20</constant>
+        <constant name="posterH">480</constant>
+        <constant name="posterW">320</constant>
+        <constant name="fanartH">675</constant>
+        <constant name="fanartW">1200</constant>
+        <constant name="listH">240</constant>        <!-- 1080-2*verticalPad-posterH -->
+        <constant name="listW">610</constant>        <!-- 1920-horizontalPad-fanartPad-fanartW-itemGap -->
+        <constant name="bottomGroupH">205</constant>        <!-- 1080-fanartPad-verticalPad-fanartH-itemGap -->
+        <constant name="bottomGroupW">1420</constant>        <!-- 1920-2*horizontalPad-posterW-itemGap -->
+        <constant name="bottomSubGroupW">700</constant>        <!-- (bottomGroupW-itemGap)/2 -->
+        <control type="group">
+            <include>Animation.Common</include>
+            <visible>Control.IsVisible(711)</visible>
+            <include>ViewSlideForJumpBar</include>
+
+
+            <constant name="horizontalPad">80</constant>
+
+            <control type="image">
+                <top>10</top>
+                <right>10</right>
+                <width>1200</width>
+                <height>675</height>
+                <fadetime>750</fadetime>
+                <texture>$INFO[Container(711).ListItem.Art(fanart)]</texture>
+                <aspectratio>keep</aspectratio>
+                <visible>Control.IsVisible(711)</visible>
+                <bordersize>5</bordersize>
+                <bordertexture infill="false">common/box.png</bordertexture>
+            </control>
+
+            <control type="group">
+                <top>705</top>
+                <left>711</left>
+                <width>1130</width>
+                <height>205</height>
+                <visible>Control.IsVisible(711)</visible>
+
+                <control type="textbox">
+                    <width>560</width>
+                    <autoscroll delay="8000" time="1250" repeat="7500">true</autoscroll>
+                    <label>$INFO[Container(711).ListItem.Plot]</label>
+                </control>
+
+                <control type="group">
+                    <left>580</left>
+                    <width>550</width>
+                    <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                    <control type="label">
+                        <top>0</top>
+                        <height>50</height>
+                        <scroll>true</scroll>
+                        <label>$LOCALIZE[20373] $INFO[ListItem.Season] $LOCALIZE[20359] $INFO[ListItem.Episode]$VAR[RatingLabel,  •  ,]</label>
+                    </control>
+                    <control type="label">
+                        <top>50</top>
+                        <height>50</height>
+                        <scroll>true</scroll>
+                        <label>$VAR[709_Row_2]</label>
+                    </control>
+                    <control type="label">
+                        <top>100</top>
+                        <height>50</height>
+                        <scroll>true</scroll>
+                        <label>$VAR[LabelDurationTimeCheck]$VAR[709_Row_4,  •  ,]</label>
+                    </control>
+                </control> <!-- Detail block -->
+            </control>
+            <!-- Information block -->
+            <!-- bar du bas: 170 -->
+            <!-- bar du haut: 170 -->
+
+            <control type="scrollbar" id="1711">
+                <include content="scrollbar_vertical">
+                    <param name="scrollid" value="1711"/>
+                </include>
+            </control>
+
+            <control type="list" id="711">
+                <viewtype label="Fanart Information">list</viewtype>
+                <left>80</left>
+                <top>170</top>
+                <width>610</width>
+                <!-- <height>240</height> -->
+                <height>740</height>
+                <orientation>vertical</orientation>
+                <focusposition>1</focusposition>
+                <visible>Container.Content(episodes)</visible>
+                <!-- <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible> -->
+
+                <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+                <onright>1711</onright>
+                <onup>711</onup>
+                <ondown>711</ondown>
+                <pagecontrol>1711</pagecontrol>
+                <!-- <include>ScrolltimeViewsList</include> -->
+                <!-- Scrollbar Start -->
+                <!-- Scrollbar End -->
+
+                <itemlayout width="610" height="386">
+                    <control type="group">
+                        <height>336</height>
+                        <include content="include.widget.landscape">
+                            <param name="id" value="711"/>
+                            <param name="height" value="336"/>
+                        </include>
+                    </control>
+                    <control type="label">
+                        <font>Tiny</font>
+                        <left>10</left>
+                        <bottom>0</bottom>
+                        <width>500</width>
+                        <height>50</height>
+                        <align>left</align>
+                        <textcolor>Dark1</textcolor>
+                        <selectedcolor>Dark2</selectedcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <font>Tiny</font>
+                        <right>10</right>
+                        <bottom>0</bottom>
+                        <width>100</width>
+                        <height>50</height>
+                        <align>right</align>
+                        <textcolor>Dark1</textcolor>
+                        <selectedcolor>Dark2</selectedcolor>
+                        <label>$VAR[RatingLabel]</label>
+                    </control>
+                </itemlayout>
+
+                <focusedlayout width="610" height="386">
+                    <control type="group">
+                        <height>336</height>
+                        <include content="include.widget.landscape.focus">
+                            <param name="id" value="711"/>
+                            <param name="height" value="336"/>
+                            <param name="glow_height" value="247" />
+                            <param name="glow_top" value="-2"/>
+                            <param name="glow_left" value="5"/>
+                            <param name="glow_right" value="5"/>
+                            <param name="glow_zoom" value="108"/>                            
+                        </include>
+                    </control>
+                    <control type="label">
+                        <font>Tiny</font>
+                        <left>10</left>
+                        <bottom>0</bottom>
+                        <width>500</width>
+                        <height>50</height>
+                        <align>left</align>
+                        <textcolor>Dark1</textcolor>
+                        <selectedcolor>Dark2</selectedcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <font>Tiny</font>
+                        <right>10</right>
+                        <bottom>0</bottom>
+                        <width>100</width>
+                        <height>50</height>
+                        <align>right</align>
+                        <textcolor>Dark1</textcolor>
+                        <selectedcolor>Dark2</selectedcolor>
+                        <label>$VAR[RatingLabel]</label>
+                    </control>
+                </focusedlayout>
+            </control> <!-- List block -->
+        </control> <!-- All block -->
+    </include>
+</includes>
