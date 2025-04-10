@@ -105,37 +105,6 @@
                 <!-- Scrollbar Start -->
                 <!-- Scrollbar End -->
 
-                <!-- <itemlayout width="610" height="386">
-                    <control type="group">
-                        <height>336</height>
-                        <include content="include.widget.landscape">
-                            <param name="id" value="711"/>
-                            <param name="height" value="336"/>
-                        </include>
-                    </control>
-                    <control type="label">
-                        <font>Tiny</font>
-                        <left>10</left>
-                        <bottom>0</bottom>
-                        <width>500</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <textcolor>Dark1</textcolor>
-                        <selectedcolor>Dark2</selectedcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="label">
-                        <font>Tiny</font>
-                        <right>10</right>
-                        <bottom>0</bottom>
-                        <width>100</width>
-                        <height>50</height>
-                        <align>right</align>
-                        <textcolor>Dark1</textcolor>
-                        <selectedcolor>Dark2</selectedcolor>
-                        <label>$VAR[RatingLabel]</label>
-                    </control>
-                </itemlayout> -->
                 <itemlayout width="610" height="50">
                     <control type="group">
                         <control type="label">
@@ -165,42 +134,6 @@
                     </control>
                 </itemlayout>
 
-                <!-- <focusedlayout width="610" height="386">
-                    <control type="group">
-                        <height>336</height>
-                        <include content="include.widget.landscape.focus">
-                            <param name="id" value="711"/>
-                            <param name="height" value="336"/>
-                            <param name="glow_height" value="247" />
-                            <param name="glow_top" value="-2"/>
-                            <param name="glow_left" value="5"/>
-                            <param name="glow_right" value="5"/>
-                            <param name="glow_zoom" value="108"/>                            
-                        </include>
-                    </control>
-                    <control type="label">
-                        <font>Tiny</font>
-                        <left>10</left>
-                        <bottom>0</bottom>
-                        <width>500</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <textcolor>Dark1</textcolor>
-                        <selectedcolor>Dark2</selectedcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="label">
-                        <font>Tiny</font>
-                        <right>10</right>
-                        <bottom>0</bottom>
-                        <width>100</width>
-                        <height>50</height>
-                        <align>right</align>
-                        <textcolor>Dark1</textcolor>
-                        <selectedcolor>Dark2</selectedcolor>
-                        <label>$VAR[RatingLabel]</label>
-                    </control>
-                </focusedlayout> -->
                 <focusedlayout width="610" height="80">
                     <control type="image">
                         <width>100%</width>
