@@ -30,7 +30,7 @@
                 <width>1200</width>
                 <height>675</height>
                 <fadetime>750</fadetime>
-                <texture>$INFO[Container(711).ListItem.Art(thumb)]</texture>
+                <texture>$VAR[711_Episode_Image]</texture>
                 <aspectratio>keep</aspectratio>
                 <visible>Control.IsVisible(711)</visible>
                 <bordersize>5</bordersize>

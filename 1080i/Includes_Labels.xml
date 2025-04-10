@@ -158,6 +158,17 @@
         <value>$LOCALIZE[19055]</value>
     </variable>
 
+    <variable name="710_Season_Image">
+        <value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[Container(710).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[Container(710).ListItem.Art(poster)]</value>
+        <value>$INFO[Container(710).ListItem.Art(fanart)]</value>
+    </variable>
+
+    <variable name="711_Episode_Image">
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[Container(711).ListItem.Art(thumb)]</value>
+        <value>$INFO[Container(711).ListItem.Art(fanart)]</value>
+    </variable>
+
     <variable name="LabelPercentWatched9500">
         <value condition="Skin.HasSetting(hide.markers)"></value>
         <value condition="Container(9500).ListItem.IsResumable">&#62596;</value>

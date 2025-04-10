@@ -30,7 +30,7 @@
                 <width>1200</width>
                 <height>675</height>
                 <fadetime>750</fadetime>
-                <texture>$INFO[Container(710).ListItem.Art(landscape)]</texture>
+                <texture>$VAR[710_Season_Image]</texture>
                 <aspectratio>keep</aspectratio>
                 <visible>Control.IsVisible(710)</visible>
                 <bordersize>5</bordersize>
